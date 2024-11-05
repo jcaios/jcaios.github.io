@@ -1,4 +1,3 @@
 # jcaios.github
-nobody reads this
 
-portfolio/fashion/index.html
+website= https://jcaios.github.io/portfolio/fashion/index.html
