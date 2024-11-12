@@ -1,3 +1,3 @@
 # jcaios.github
 
-website= https://jcaios.github.io/portfolio/fashion/index.html
+website= https://github.com/jcaios/jcaios.github.io/blob/main/portfolio/fashion/index.html
