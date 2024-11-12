@@ -1,3 +1,3 @@
 # jcaios.github
 
-website= https://github.com/jcaios/jcaios.github.io/blob/main/portfolio/fashion/index.html
+website= file:///C:/Users/caioJ/OneDrive/Desktop/websites/portfolio/fashion/index.html
