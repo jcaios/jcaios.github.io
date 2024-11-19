@@ -1,0 +1,61 @@
+/*  ============= WEB BROWSER RESETS ============ */
+* { margin: 0; padding: 0; border: none; box-sizing: border-box; }
+*, *::before, *::after { box-sizing: border-box; }
+
+html { 
+    height: 100%; 
+    font-size: 140%; 
+    font: inherit; 
+    vertical-align: baseline; 
+    scroll-behavior: smooth; 
+    scroll-padding-top: 20px; 
+}
+
+body { 
+    background-color: antiquewhite; 
+    padding: 4% 20%; 
+    line-height: 1.5; 
+    min-height: 100vh;
+    text-rendering: optimizeLegibility;
+}
+
+/* Media Query for smaller devices */
+@media (max-width: 767px ) { 
+    body { text-rendering: optimizeSpeed; }
+}
+
+img { 
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+input, button, textarea, select { 
+    font: inherit; 
+}
+
+/* Typography */
+h1 { 
+    font-size: 84px; 
+    color: brown; 
+}
+
+h2 { 
+    font-size: 36px; 
+    margin-bottom: 4px; 
+    color: brown; 
+}
+
+h3 { 
+    font-size: 24px; 
+    margin-bottom: 4px; 
+    color: brown; 
+}
+
+p { 
+    font-size: 18px; 
+}
+
+a { 
+    color: brown; 
+}
