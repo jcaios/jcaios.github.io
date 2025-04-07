@@ -1,0 +1,123 @@
+body {
+    font-family: "Geist", sans-serif;
+  }
+  
+  nav.theme-dark,
+  nav.theme-dark ul.links-wrapper.active {
+    background-color: #D2042D;
+    position: relative; /* Ensure positioning for glowing effect */
+    border: 2px solid transparent; /* Add border for glow */
+    border-radius: 8px; /* Smooth corners for the nav */
+  }
+  
+  nav.theme-dark::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(90deg, #020e60, #5420f0, #285def, #387dd8, 	#66b2f5);
+    background-size: 400% 400%;
+    border-radius: 10px; /* Match or slightly exceed the nav's border-radius */
+    z-index: -1; /* Place the glowing effect behind the nav */
+    animation: glow 12s linear infinite;
+  }
+  
+  @keyframes glow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  header.theme-dark {
+    background-color: var(black);
+  }
+  
+  header.theme-dark h1 {
+    color: var(--sky-400);
+  }
+  
+  section.theme-dark {
+    background-color: #0f172a;
+  }
+  
+  footer.theme-dark {
+    background-color: black; /* Dark background */
+    color: white; /* White text */
+    padding: 30px;
+    border-radius: 10px;
+    position: relative; /* Ensure it can be layered on top */
+    box-shadow: 0 0 20px rgba(76, 203, 245, 0.8); /* Stronger glowing background */
+    text-shadow: 0 0 22px rgb(0, 17, 255), 0 0 10px rgba(0, 255, 255, 0.5); /* Stronger glowing text */
+  }
+  
+  
+  
+  header .col-text h2,
+  .col-1 > h3 {
+    line-height: 1.8;
+  }
+  
+
+  /* Video background styling */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Keep video behind content */
+    overflow: hidden;
+}
+
+.video-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the whole screen */
+}
+
+/* Make the header take full height and align content to the left */
+header {
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: center; /* Vertically center content */
+    padding: 20px;
+    height: 100vh; /* Take up the full height of the screen */
+    position: relative;
+    z-index: 1; /* Ensure header is above the video */
+}
+
+/* Content area (text) */
+.col-text {
+    position: relative;
+    z-index: 2;
+    width: 60%; /* Adjust the width to fit your needs */
+    padding-left: 20px; /* Adjust the padding to give space on the left */
+}
+
+/* Optional styles for badge and buttons */
+.badge {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container-btn a {
+    margin-top: 10px;
+}
+
+/* Ensure the text stays above the video */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+
