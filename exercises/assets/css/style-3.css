@@ -1,0 +1,61 @@
+/*  ============= WEB BROWSER RESETS ============ */
+body { background-color: lightblue; }
+section *:last-child { margin-bottom: 0 !important }
+* { margin: 0; padding: 0; border: orangered }
+*, *::before, *::after { box-sizing: border-box }
+html { height: 100%; font-size: 140%; font: inherit; vertical-align: baseline;
+scroll-behavior: smooth; scroll-padding-top: 20px }
+body { line-height: 1.5; min-height: 100vh }
+@media (max-width: 767px ) { body { text-rendering: optimizeSpeed } }
+@media (min-width: 768px ) { body { text-rendering: optimizeLegibility } }
+img { width: 100%; height: auto; display: block }
+input, button, textarea, select { font: inherit }
+
+
+section { padding: 4% 20% }
+
+:root {
+    --red-050: #FEF2F2;
+--red-100: #fff5f5;
+--red-200: #fed7d7;
+--red-300: #feb2b2;
+--red-400: #fc8181;
+--red-500: #f56565;
+--red-600: #e53e3e;
+--red-700: #c53030;
+--red-800: #9b2c2c;
+--red-900: #742a2a; 
+--lemon-chiffon: #FFFACD;
+--light-green: #90EE90;
+--light-blue: #ADD8E6;
+--dark-blue: #00008B;
+--light-coral: #F08080; 
+
+}
+
+h2 {color: blue;}
+    a { color: blue; }
+
+
+
+p {
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.section-1 {background-color: var(--lemon-chiffon);}
+
+.section-2 {background-color: var(--light-green);}
+
+.section-3 {background-color: var(--light-blue);}
+
+.section-4 {background-color: var(--dark-blue);}
+
+section-4 h2,
+section-4 p{color: #fff;}
+
+.section-5 {background-color: var(--light-coral);}
+    
+
+
+a { color: blue; }
