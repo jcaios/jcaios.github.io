@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    
+
+<div id="output-books"></div>
+
+<script>
+  
+
+const arrBooks = [
+    
+];
+
+//get outer div container
+const outputBooks = document.getElementById('output-books');
+
+//create h3 heading
+const subHeading = document.createElement('h3');
+
+//put content inside h3 subheading
+subHeading.innerHTML = "<h3>Top 5 Books</h3>";
+
+//add the h3 element to the div container
+outputBooks.appendChild(subHeading);
+
+const dataContainer = document.createElement('div');
+
+
+
+
+arrBooks.forEach(book => {
+    const detailsBook = document.createElement('p');
+    detailsBook.innerHTML = `<b>Title:</b> ${book.title}<br> 
+    <b>Author:</b> ${book.author}<br> 
+    <b>Year:</b> ${book.year}<br> 
+    <b>Genre:</b> ${book.genre}<br> 
+    <b>Pages:</b> ${book.pages}<br> 
+    <b>Rating:</b> ${book.rating}<br> 
+    <b>Price:</b> ${book.price}<br> 
+    <b>ISBN:</b> ${book.isbn}<br> 
+    <b>Summary:</b> ${book.summary}<br> 
+    <b>Review:</b> ${book.review}<br> 
+    <b>Image:</b> ${book.image}`;
+    //data goes here
+
+    
+});
+
+//append the data container to the output div
+outputBooks.appendChild(dataContainer);
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom-buttons.html</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            border: none;
+            line-height: 1.5;
+            margin-left: auto;
+            margin-right: auto;
+            min-height: 100vh;
+            font-family: sans-serif
+        }
+
+        html {
+            height: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block
+        }
+
+        section {
+            padding: 2% calc((100% - 960px)/ 2);
+        }
+
+        section h1 {
+            font-size: 48px;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            margin-bottom: 6px
+        }
+
+        section h2 {
+            font-size: 36px;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            margin-bottom: 6px
+        }
+
+        section p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #333;
+            margin: 0 0 16px 0
+        }
+
+        section button {
+            font-size: 18px;
+            line-height: 1;
+            background-color: red;
+            color: white;
+            margin: 0 0 16px 0;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .newHeadingClass {
+            background-color: blue;
+            color: pink;
+            padding: 10px;
+            border-radius: 5px
+        }
+
+        .messageOrderPlaced {
+            background-color: lightgreen;
+            color: #000;
+            border: solid 1px green;
+            padding: 10px;
+            border-radius: 5px
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+        <section id="mySection">
+
+            <h1 id="bigHeading">Big heading here</h1>
+
+            <h2>Smaller heading</h2>
+            <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to
+                corporate strategy foster collaborative thinking to further the overall value proposition.</p>
+
+            <div id="myDiv">
+
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id ullam ea repellendus maiores excepturi
+                    nihil, debitis assumenda quo itaque unde iure iusto natus modi deserunt dolorem, deleniti animi?
+                    Repellat, neque?</p>
+
+            </div>
+
+            <!-- Button linked to event handler function -->
+            <button id="btn_1" onclick="changeHeading()">Update h1</button>
+
+
+            <button id="btn_2" onclick="restoreHeading()">Restore h1</button>
+
+
+            <button id="btn_3" onclick="doParaText()">Update para text</button>
+
+
+            <button id="btn_4" onclick="placeOrder()">Order product</button>
+
+            <button id="btn_5" onclick="updateDiv()">Turn red</button>
+
+            <button id="btn_6" onclick="resetColor()">Reset Color</button>
+            
+            <button id="btn_7" onclick="addPara()">add Paragraph</button>
+
+
+
+
+
+        </section>
+
+    </main>
+
+    <script>
+
+        // JavaScript code goes here
+        // Access a web page element with by its unique ID
+        // let bigHeading = document.getElementById('bigHeading');
+        // JavaScript can change the properties of an element
+        //  bigHeading.style.backgroundColor = 'red'; // NOT background-color
+        // bigHeading.style.color = 'white';
+        // JavaScript can change the content of an element
+        // bigHeading.innerText = "New heading text from JS";
+        // bigHeading.innerHTML = "New heading text in <i>italics</i> from JS";
+
+        // Add CSS class to the heading
+        // Function to change the heading properties and content
+        function changeHeading() {
+            // Get the HTML heading element from the web page
+            let bigHeading = document.getElementById('bigHeading');
+            // Add a new CSS class to the element
+            bigHeading.classList.add('newHeadingClass');
+            // Update HTML element content
+            bigHeading.innerText = 'New heading text from JS';
+            // Update the HTML element content with HTML tag included
+            bigHeading.innerHTML = 'New heading text in <i>italics</i> from JS';
+        }
+
+        // Function to restore the heading to its original state
+        function restoreHeading() {
+            // Get the HTML heading element from the web page
+            let bigHeading = document.getElementById('bigHeading');
+            // Remove the CSS class from the element
+            bigHeading.classList.remove('newHeadingClass');
+            // Replace the new HTML element content with the original content
+            bigHeading.innerText = 'Big heading here';
+        }
+
+        // Function to add a new message to the page
+        function placeOrder() {
+            // Create a new HTML element
+            let newMessage = document.createElement("div");
+            // Add a CSS class to the new element
+            newMessage.classList.add("messageOrderPlaced");
+            // Add content to the new element
+            newMessage.innerHTML = "Your order has been placed. <b>Thank you</b>";
+            // Add the new element to the web page
+            // Get the section element as the parent element
+            let parentSection = document.getElementById("mySection");
+            // Add the new element as a child of the parent section
+            parentSection.appendChild(newMessage);
+        }
+
+        function updateDiv() {
+            let myDiv = document.getElementById('myDiv');
+            myDiv.style.backgroundColor = 'red';
+        }
+
+        function resetColor() {
+            let myDiv = document.getElementById('myDiv');
+            myDiv.style.backgroundColor = 'white';
+        }
+
+        function addPara() {
+            let newPara = document.createElement('p');
+            newPara.innerText = "This is a new paragraph added by JS";
+            let parentSection = document.getElementById("mySection");
+            parentSection.appendChild(newPara);
+            
+        }
+    </script>
+
+</body>
+
+</html>

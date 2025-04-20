@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>arrays.html</title>
+
+    <meta name="robots" content="noindex">
+
+    <link rel="preload" as="image" href="https://munnelly.com/dorset/javascript/lessons/assets/workfiles/arrays.png">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: none
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box
+        }
+
+        html {
+            height: 100%;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+            scroll-behavior: smooth;
+            scroll-padding-top: 20px
+        }
+
+        body {
+            line-height: 1.5;
+            margin-left: auto;
+            margin-right: auto;
+            min-height: 100vh;
+            text-rendering: optimizeSpeed
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block
+        }
+
+        header,
+        section,
+        footer {
+            width: 100%
+        }
+
+        section *:last-child,
+        footer *:last-child {
+            margin-bottom: 0 !important
+        }
+
+        body {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell, Droid Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Emoji, Segoe UI Symbol, Lucida Grande, Helvetica, Arial, sans-serif
+        }
+
+        .font-mono {
+            font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+        }
+
+        header {
+            background-image: linear-gradient(270deg, #0460CD, #021b79);
+            margin: 0 auto;
+            box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .12), inset 0 -1px 0 0 #dadce0;
+        }
+
+        @media (min-width:1200px) {
+            header {
+                padding: 3% calc((100% - 1024px)/ 2) 2% calc((100% - 1024px)/ 2)
+            }
+
+            section {
+                padding: 2% calc((100% - 960px)/ 2) 3% calc((100% - 1024px)/ 2)
+            }
+        }
+
+        @media (min-width:1025px) and (max-width:1199px) {
+
+            header,
+            section {
+                padding: 3% 14% 4% 14%
+            }
+        }
+
+        @media (min-width:768px) and (max-width:1024px) {
+
+            header,
+            section {
+                padding: 3% 8% 4% 8%
+            }
+        }
+
+        @media (max-width:767px) {
+
+            header,
+            section {
+                padding: 6% 13% 9% 13%
+            }
+        }
+
+        header h1 {
+            font-size: calc(28px + (52 - 28) * ((100vw - 320px) / (1920 - 320)));
+            line-height: 1.1;
+            margin-bottom: 16px;
+            color: #fff;
+            text-shadow: 2px 2px 2px #222
+        }
+
+        header h1 span {
+            color: #e3e3e3;
+            font-weight: normal
+        }
+
+        section h2 {
+            font-size: calc(22px + (38 - 22) * ((100vw - 320px) / (1920 - 320)));
+            letter-spacing: -1px;
+            line-height: 1.1;
+            margin-bottom: 16px
+        }
+
+        header a {
+            color: #fff;
+            text-underline-offset: 7px;
+            transition: all 0.5s ease;
+        }
+
+        header a:hover,
+        header a:active {
+            text-decoration: none
+        }
+
+        section a {
+            text-underline-offset: 7px;
+            transition: all 0.5s ease;
+        }
+
+        section a:hover,
+        section a:active {
+            color: #000;
+            text-decoration: none
+        }
+
+        section h3 {
+            font-size: calc(19px + (24 - 19) * ((100vw - 320px) / (1920 - 320)));
+            line-height: 1.1;
+            margin-top: 32px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        p,
+        li {
+            font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1140 - 320)))
+        }
+
+        p {
+            line-height: 1.5;
+            color: #fff
+        }
+
+        li {
+            line-height: 1.4
+        }
+
+        @media (min-width: 768px) {
+
+            p,
+            ul {
+                margin-bottom: 18px
+            }
+
+            ul li {
+                line-height: 1.4;
+                margin-left: 20px;
+                margin-bottom: 14px;
+                padding-left: 14px
+            }
+        }
+
+        @media (max-width: 767px) {
+
+            p,
+            ul {
+                margin-bottom: 16px
+            }
+
+            ul {
+                margin-left: 0;
+                margin-bottom: 16px
+            }
+
+            ul li {
+                margin-left: 16px;
+                margin-bottom: 10px;
+                padding-left: 8px
+            }
+        }
+
+        kbd {
+            display: inline-block;
+            background-color: #eee;
+            border-radius: 5px;
+            border: 1px solid #b4b4b4;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+            color: #555;
+            font-weight: 600;
+            line-height: 1;
+            padding: 4px 7px;
+            white-space: nowrap;
+            cursor: default;
+            user-select: none;
+            font-family: 'Roboto Mono', monospace;
+            letter-spacing: -0.5px;
+            margin: 0 2px;
+            font-size: 80%;
+        }
+
+        .js-box {
+            border: solid 1px yellow;
+            padding: 20px;
+            background-color: lightyellow;
+            margin-bottom: 20px;
+            font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1140 - 320)));
+        }
+
+        button {
+            display: block;
+            padding: 10px 22px;
+            color: #fff;
+            background-color: green;
+            border-radius: 5px;
+            border: none;
+            font-size: 18px;
+            outline: 0;
+            margin: 32px 0;
+            transition: all 0.2s linear;
+        }
+
+        button:focus,
+        button:hover,
+        button:active {
+            background-color: red;
+        }
+
+        footer {
+            background: #0C4A6E
+        }
+
+        @media (min-width: 1200px) {
+            footer {
+                padding: 3.5% calc((100% - 800px)/2) 4% calc((100% - 800px)/2);
+                margin: 0 auto;
+            }
+        }
+
+        @media (min-width: 1025px) and (max-width: 1199px) {
+            footer {
+                padding: 3% 14% 3% 14%
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            footer {
+                padding: 5% 12%
+            }
+        }
+
+        @media (max-width: 767px) {
+            footer {
+                padding: 5%
+            }
+        }
+
+        section {
+            background: linear-gradient(90deg, #fefcbf, #fefcbf)
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Introduction to arrays: <span>Exercises</span></h1>
+        <p>Save this web page as <b>arrays-intro.html</b> to a 📁 <b>javascript/exercises</b> sub-folder on your
+            computer.</p>
+        <img src="https://munnelly.com/dorset/javascript/lessons/assets/workfiles/arrays.png" width="567" height="90"
+            alt="screenshot" style="max-width: 600px;margin-bottom: 12px">
+
+
+        <p>Open your saved web page in VS Code and follow the exercises in the JavaScript Tutorial below.</p>
+
+        <p>✅ &nbsp;Happy coding.</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Tutorial</h2>
+            <ul>
+                <li>Introduction to arrays</li>
+            </ul>
+
+        </section>
+
+    </main>
+
+    <footer></footer>
+
+    <script>
+        // Your JavaScript code goes here
+
+        // Declaring an array with items on separate lines and a trailing comma
+        const arrUserFirstNames = [
+            "Camille",
+            "Emma",
+            "Gabriel",
+            "Romy",
+        ];
+
+        console.log(arrUserFirstNames);
+
+
+
+        const arrUserIDs = [4032, 5229, 1234, 6317];
+        const arrCars = ["Volvo", "Citreon", "BMW", "Opel", "Peugeot", "Ford"];
+        const arrPrices = [11.99, 24.50, 34.25, 49.99];
+
+
+        // === Outputting array items by index position ===
+
+        console.log(`First item of arrUserFirstNames array: ${arrUserFirstNames[0]}`);
+        console.log(`First item of arrPrices array: ${arrPrices[1]}`);
+        console.log(`First item of arrCars array: ${arrCars[2]}`);
+        console.log(`First item of arrUserIDs array: ${arrUserIDs[3]}`);
+
+
+        // === Array length property ===
+        console.log(`Number of items in arrUserFirstNames: ${arrUserFirstNames.length}`);
+        // 4
+        console.log(`Number of items in arrPrices: ${arrPrices.length}`);
+        // 4
+
+
+        // === Accessing last item in array ===
+        console.log(`Last item of arrCars array: ${arrCars[arrCars.length - 1]}`);
+        // Ford
+        console.log(`Last item of arrStudentIDs array: ${arrUserIDs[arrUserIDs.length - 1]}`);
+        // 6317
+
+        // === Using typeof with a null variable and arrays ===
+        let someVar = null;
+        console.log(`Type of someVar: ${typeof someVar}`);
+        // Outputs object
+
+        console.log(`Type of arrUserFirstNames: ${typeof arrUserFirstNames}`);
+        // Also outputs object
+        console.log(`Type of arrPrices: ${typeof arrPrices}`);
+        // Also outputs object
+
+
+        // === Testing for an array ===
+
+        // Check if arrCars is an array
+        if (Array.isArray(arrCars)) {
+            console.log("arrCars is an array.");
+        } else {
+            console.log("arrCars is not an array.");
+        }
+
+        // Check if someVar is an array
+        if (Array.isArray(someVar)) {
+            console.log("someVar is an array.");
+        } else {
+            console.log("someVar is not an array.");
+        }
+
+        // === Looping through array values ===
+
+        // Looping through the arrUserFirstNames array
+        arrUserFirstNames.forEach(userFirstName => {
+            console.log(userFirstName);
+        });
+
+        // Looping through the arrPrices array
+        arrPrices.forEach(price => {
+            console.log(price);
+        });
+
+        // looping through the arrCars array
+        arrCars.forEach(car => {
+            console.log(car);
+        });
+
+        // Changing numeric values with a loop
+        arrPrices.forEach(price => {
+            console.log(`Original price: ${price}`);
+            console.log(`Sale price (10% off): ${price - (price * 0.1)}`);
+        });
+
+
+        // Changing case of text characters in loop
+        arrUserFirstNames.forEach(userFirstName => {
+            console.log(`Original name: ${userFirstName}`);
+            console.log(`Lower case name: ${userFirstName.toLowerCase()}`);
+        });
+
+
+        // === Creating an empty array to populate later ===
+
+        // Create array without items
+        let arrLastNames = [];
+
+        // Populate empty array
+        arrLastNames = ["Bloggs", "Smith", "Murphy", "Higgins"];
+        console.log(`Array items: ${arrLastNames}`);
+
+        // Create and populate new array
+        const arrFruits = ["Apple", "Banana", "Orange", "Pear"];
+
+        // Assign array items to variables without destructuring
+        let fruit1 = arrFruits[0];
+        let fruit2 = arrFruits[1];
+        let fruit3 = arrFruits[2];
+        let fruit4 = arrFruits[3];
+        console.log(`Fruit 1: ${fruit1}`);
+        console.log(`Fruit 2: ${fruit2}`);
+        console.log(`Fruit 3: ${fruit3}`);
+        console.log(`Fruit 4: ${fruit4}`);
+
+        // Assign array items to variables with destructuring
+        let [fruitOne, fruitTwo, fruitThree, fruitFour] = arrFruits;
+        console.log(`Fruit 1: ${fruitOne}`);
+        console.log(`Fruit 2: ${fruitTwo}`);
+        console.log(`Fruit 3: ${fruitThree}`);
+        console.log(`Fruit 4: ${fruitFour}`);
+
+
+        // Create and populate new array
+        const arrCities = ["Dublin", "Cork", "Belfast", "Derry"];
+
+        // Skipping an array item while destructuring
+        let [firstCity, , thirdCity] = arrCities;
+        console.log(`Array item at position [0]: ${firstCity}`);
+        console.log(`Array item at position [2]: ${thirdCity}`);
+
+        
+    </script>
+
+</body>
+
+</html>
