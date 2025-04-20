@@ -3,256 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caio Jacobina | Web Designer and Developer</title>
-    <meta name="description" content="I create digital experiences to promote products, services, and events.">
+    <meta name="viewport" content="width=device-width, initial-scale=.0">
+    <title>Caio Jacobina | Front-end Developer | JavaScript Portfolio</title>
+    <meta name="description" content="A sample collection of my recent JavaScript projects.">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon_io (2)/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon_io (2)/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon_io (2)/favicon-16x16.png">
-    <link rel="manifest" href="assets/img/site.webmanifest">
-
-    <!-- Preload large image -->
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://lunevedy.com/assets/2.0/css/lunevedy.min.css" />
-    <link rel="stylesheet" href="assets/css/custom.css" />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome 6 icons. Delete if not using. -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    
-    <!-- Styles for Cookie Consent Popup Message  -->
-    <link href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" rel="stylesheet">
+	<!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/lunadoge.css" />
+    <link rel="stylesheet" href="assets/css/css-javascript.css" />
 
     <style>
-        header .col-text h2 { line-height: 1.8 }
-        .col-1 > h3 { line-height: 1.8 } 
 
-        /* Video background styling */
-        .video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1; /* Ensures the video stays behind the content */
+        /* ============ Header Colours =============*/
+        header.hero-block-js { background-color: #f7df1e }
+        header.hero-block-js h1 { color: #222 }
+        header.hero-block-js h2 { color: var(--gray-700) }
+
+        /* Main Colours */
+        .theme-js {
+            background-image:#ff0000;background-image:
+            radial-gradient(at 40% 20%, hsla(28,100%,74%,1) 0, transparent 50%),
+            radial-gradient(at 80% 0%, hsla(189,100%,56%,1) 0, transparent 50%),
+            radial-gradient(at 0% 50%, hsla(355,85%,93%,1) 0, transparent 50%),
+            radial-gradient(at 80% 50%, hsla(340,100%,76%,1) 0, transparent 50%),
+            radial-gradient(at 0% 100%, hsla(22,100%,77%,1) 0, transparent 50%),
+            radial-gradient(at 80% 100%, hsla(242,100%,70%,1) 0, transparent 50%),
+            radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0, transparent 50%);
         }
 
-        /* Ensure that content remains visible above the video */
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
+        .theme-js .col-4 { background-color: var(--green-100) }
+        .theme-js h3 { color: #222 }
+        .theme-js p { color: #222 }
+
+        /* Button Colours: passive state */
+        .theme-js a.btn {
+            color: #fff; background-color: blue; transition: 0.2s;
+            border-radius: 6px
         }
+
+        /* Button Colours: active state */
+        .theme-js a.btn:hover { background-color: darkblue }
+
+        .theme-js a.btn { background-image: linear-gradient(to right,#e052a0,#f15c41) }
+        .theme-js a.btn:hover { filter: brightness(140%) saturate(140%) }
+
     </style>
 
- <!-- Website stream-->
-     <!-- Google tag (gtag.js) -->
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-36KG3XLS0T"></script>
-     <script>
-     window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
-     gtag('config', 'G-36KG3XLS0T');
-    </script>
-
+	<!-- Font Awesome 6.1 icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
+
+
 <body>
 
-    <!-- Video Background -->
-    <video class="video-background" autoplay muted loop>
-        <source src="assets/videos/video-background.webm" type="video/webm">
-        
-    </video>
+    <!-- navigation menu -->
 
-    <!-- menu and 'hero block' header -->
-    <nav class="theme-dark"><div class="container-menu">
-        <a href="#" class="brand">
-            <img src="assets/img/caiofourth.png " alt="caio's logo">
-        </a>
-    
-        <div class="container-menu-links">
-    
-            <div class="nav-toggle" id="nav-toggle-btn">
-                <div class="bar-1"></div>
-                <div class="bar-2"></div>
-                <div class="bar-3"></div>
-            </div>
-    
-            <ul class="links-wrapper">
-                <li><a href="#">Home</a></li>
-                <li><a href="portfolio/index.html">Portfolio</a></li>
-                <li><a href="store/index.html">Store</a></li>
-                <li><a class="btn btn-solid btn-soft" id="btn-cta" href="contact/index.html"><span>Contact</span> <i class="fa-regular fa-envelope"></i></a></li>
-            </ul>
-        </div></div></nav>
-
-        
-    
-    <!-- header starts here -->
-    <header class="theme-dark cols-2-half text-center-mobile">
-        <div class="col-2 col-text">
-            <div class="badge">WELCOME</div>
-            <h1>Caio Jacobina</h1>
-            <h2>I am an innovative front-end developer who loves to build human-friendly interfaces.</h2>
-
-            <div class="container-btn">
-                <a href="portfolio/index.html" class="btn btn-solid btn-soft"><span>View my work</span><i class="fa-regular fa-folder-open"></i></a>
-                <a href="contact/index.html" class="btn btn-outline btn-soft"><span>Get in touch</span><i class="fa-regular fa-envelope"></i></a>
-            </div>
+    <nav class="container-menu menu-desktop menu-sticky">
+        <a href="../../index.html"><img src="https://jcaios.github.io/assets/img/caiofourth.png" alt="website logo"></a>
+        <ul class="">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="../../contact/index.html" id="btn-cta"><span>Contact</span><i class="fas fa-arrow-right"></i></a></li>
+        </ul>
+        <div class="item-icon">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
         </div>
+    </nav>
 
-        <div class="container-media">
-			<video loop playsinline muted autoplay poster="path_to_black_image.jpg" class="background-video" disablepictureinpicture="" preload="auto">
-                <source src="assets/videos/video-background.webm" type="video/webm">
-            </video>
-            </div>
-
-    
-
-       
-
-        
-        
+    <!-- header hero block -->
+    <header class="hero-block hero-block-js">
+        <div class="hero-text-container">
+            <h1>JavaScript Projects</h1>
+            <h2>A selection of my recent JavaScript projects.</h2>
+            <img src="assets/img/caiocode.png" alt="Sample JavaScript code">
+        </div>
     </header>
-    
-        <!-- header ends here -->
 
-        <style>
-            .container-media {
-                position: relative;
-            }
-            
-            .background-video {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        
-            .container-overlay {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 1); /* Black overlay */
-                pointer-events: none;
-                z-index: 1; /* Place overlay behind text */
-            }
-        
-            .col-text {
-                position: relative;
-                z-index: 2; /* Ensure text appears above the overlay */
-            }
-        </style>
-    
     <!-- main content with sections -->
     <main>
 
-	<!-- section starts here -->
+        <section class="container-flex theme-js">
 
-    <section class="theme-dark section-selector-1 w-1356px">
+            <div class="col-4">
 
-		<div class="col-1 text-center w-820px">
-			<h2>Recent projects</h2>
-            <h3>Below you can see some examples of my recent work. Check out my complete portfolio of <a href="portfolio/index.html">web design</a> and <a href="portfolio/js/index.html"> JavaScript</a>. Have a project you would like to discuss? <a href="contact/index.html">Let's make something great together!</a> </h3>
-		</div>
+                <h3>Data Tables</h3>
 
-		<!-- Begin three-column flexbox grid -->
-		<div class="flex-cols-3 cols-gap-4">
+                <p>Populates an HTML table with data stored in an array. Includes the option to remove data items.</p>
 
-			<div class="col-3">
-				<figure class="photos-zoom photos-brightness" style="overflow: hidden;">
-					<a href="portfolio/project-hero/index-1.html"><img src="assets/img/project-hero.png" alt="Hero block gallery project"></a>
-				</figure>
-				<h3>Hero Block Gallery</h3>
-				<p>A gallery of hero block elements with split-screen layouts and duotone images.</p>
-				<a href="portfolio/project-hero/index-1.html" class="btn btn-solid btn-soft"><span>View project</span><i class="fas fa-arrow-right"></i></a>
-			</div>
+                <div class="container-btn">
+                    <a href="data-tables/index.html" class="btn btn-primary"><span>View project</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
 
-            
-			<div class="col-3">
-				<figure class="photos-zoom photos-brightness" style="overflow: hidden;">
-					<a href="portfolio/fashion/index.html"><img src="assets/img/project-fashion.jpg" alt="Fashion retailer project"></a>
-				</figure>
-				<h3>Snazzy Fashion</h3>
-				<p>A web page for a fashion retailer with a background video that plays in a continuous loop.</p>
-				<a href="portfolio/fashion/index.html" class="btn btn-solid btn-soft"><span>View project</span><i class="fas fa-arrow-right"></i></a>
-			</div>
+            <div class="col-4">
 
-			<div class="col-3">
-				<figure class="photos-zoom photos-brightness" style="overflow: hidden;">
-					<a href="portfolio/smoothies/index.html"><img src="assets/img/project-smoothie.jpg" alt="Placeholder image"></a>
-				</figure>
-				<h3>Smooth Smoothies</h3>
-				<p>A multi-column, flexbox-based page layout and hero image with a tinted overlay.</p>
-				<a href="portfolio/smoothies/index.html" class="btn btn-solid btn-soft"><span>View project</span><i class="fas fa-arrow-right"></i></a>
-			</div>
+                <h3>Weather for Dublin</h3>
 
-		</div>
-		<!-- End three-column flexbox grid -->
+                <p>Uses the Fetch API to retrieve current weather information for the city of Dublin, Ireland.</p>
 
-	</section>
+                <div class="container-btn">
+                    <a href="weather/index.html" class="btn btn-primary"><span>View project</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
 
-	<!-- section ends here -->
+            <div class="col-4">
+
+                <h3>Movies Listing</h3>
+
+                <p>Uses the Fetch API to retrieve a searchable list of movie titles and images from the Internet Movie Database.</p>
+
+                <div class="container-btn">
+                    <a href="movies/index.html" class="btn btn-primary"><span>View project</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-4">
+
+                <h3>Random Quotes Generator</h3>
+
+                <p>Uses the Fetch API to retrieve a randomly-choosen selection of ten inspiring quotations.</p>
+
+                <div class="container-btn">
+                    <a href="quotes/index.html" class="btn btn-primary"><span>View project</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+
+            <div class="col-4">
+
+                <h3>Calculator with Modules</h3>
+
+                <p>A basic calculator that uses export/import statements to share code with a JavaScript module file.</p>
+
+                <div class="container-btn">
+                    <a href="calculator-modules/index.html" class="btn btn-primary"><span>View project</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-4">
+
+                <h3>Image Blue Filter</h3>
+
+                <p>Uses CSS variables and HTML custom data attributes to adjust the filter blur property of an image.</p>
+
+                <div class="container-btn">
+                    <a href="image-blur-filter/index.html" class="btn btn-primary"><span>View project</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-4">
+
+                <h3>Counter</h3>
+
+                <p>An increment and decrement counter that changes the colour of the number displayed on the web page.</p>
+
+                <div class="container-btn">
+                    <a href="counter/index.html" class="btn btn-primary"><span>View project</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-4">
+
+                <h3>Tip Calculator</h3>
+
+                <p>Calculates the tip for a restaurant bill based on the level of service and the number of customers.</p>
+
+                <div class="container-btn">
+                    <a href="tip-calculator/index.html" class="btn btn-primary"><span>View project</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-4">
+
+                <h3>Image Slideshow</h3>
+
+                <p>A slideshow with an array of images from Dublin city, Ireland.</p>
+
+                <div class="container-btn">
+                    <a href="image-slideshow/index.html" class="btn btn-primary"><span>View project</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+
+            <div class="col-4">
+
+                <h3>Random Colour Generator</h3>
+
+                <p>Uses an array of hexadecimal values to randomly generate a background colour for the web page.</p>
+
+                <div class="container-btn">
+                    <a href="colours/index.html" class="btn btn-primary"><span>View project</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-4" style="background-color: transparent;">
+
+                <p></p>
+            </div>
+
+            <div class="col-4"  style="background-color: transparent;">
+
+                <p></p>
+            </div>
+
+        </section>
 
     </main>
 
+
     <!-- footer -->
- 
-	<footer class="theme-dark text-center-desktop text-center-mobile">
+	<footer>
 
 		<h2>Caio Jacobina</h2>
 
-		<h3>Front-end designer and developer</h3>
+		<h3>Excellence in digital creation</h3>
 
 		<ul class="footer-links">
-			<li><a href="#">Home</a></li>
-			<li><a href="portfolio/index.html">Portfolio</a></li>
-			<li><a href="store/index.html">Store</a></li>
-            <li><a href="contact/index.html">Contact</a></li>
+			<li><a href="../../index.html">Home</a></li>
+			<li><a href="#">Portfolio</a></li>
+			<li><a href="../../contact/index.html">Contact</a></li>
 		</ul>
 
 		<ul class="footer-icons">
 			<li><a href="https://www.linkedin.com/in/caio-jacobina-6165a3235/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-			<li><a href="https://github.com/jcaios" target="_blank"><i class="fab fa-github-square"></i></a></li>
+			<li><a href="https://jcaios.github.io/" target="_blank"><i class="fab fa-github-square"></i></a></li>
 		</ul>
 
-		<p class="privacy"><a href="privacy.html">Privacy &amp; Legal</a></p>
+		<p class="index.html"> <a href="../../privacy.html" style="color: #fff; background-color:transparent;">Privacy &amp; Legal</a> </p>
 
-	</footer>
+    </footer>
 
-    <script src="https://lunevedy.com/assets/js/lunevedy.js"></script>
+    <script src="assets/js/menu.js"></script>
 
-
-    
-    <!-- JavaScript for Cookie Consent Popup Message -->
-    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
-    <script>
-    window.cookieconsent.initialise({
-        "palette": {
-            "popup": {
-                "background": "#000"
-            },
-            "button": {
-                "background": "#f1d600"
-            }
-        },
-        "content": {
-            "href": "username.github.io/privacy.html"
-        }
-    });
-    </script>
 
 </body>
 </html>
+
+
+
+
+
+
+
 
